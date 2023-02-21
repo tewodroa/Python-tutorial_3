@@ -1,0 +1,38 @@
+#function to read the file and print the contents
+def read_file():
+    file = open("notebook.txt",'r')
+    content = file.read()
+    file.close()
+    print(content)
+    print('\n')
+
+#function to add notes in the file
+def add_notes(note):
+    file = open("notebook.txt",'a')
+    file.write(note)
+    file.close()
+#function to delete all the contents of the file
+def delete_notes():
+    file = open("notebook.txt",'a')
+    file.truncate(0)
+    file.close()
+    print('Notes deleted.')
+
+while True:
+    option = input('(1) Read the notebook\n'
+    '(2) Add note\n'
+    '(3) Empty the notebook\n'
+    '(4) Quit\n'
+    'Please select one :')
+   
+
+    if option == '1':
+        read_file()
+    if option == '2':
+        note = input("Write a new note: ")
+        add_notes(note+'\n')
+    if option == '3':
+        delete_notes()
+    if option == '4':
+      print('Notebook shutting down, thank you.\n')
+      break
